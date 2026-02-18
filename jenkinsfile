@@ -2,4 +2,20 @@ pipeline{
 agent any
 stages{
 stage('clone'){
-steps{git branch:
+steps{git branch:'main',url:'https://github.com/VutukuriPoojitha/helloprograms.git';
+}
+}
+stage('compile')
+{
+steps{
+sh 'javac hello.java'
+}
+}
+stage('build')
+{
+steps{
+sh 'java hello'
+}
+}
+}
+}
